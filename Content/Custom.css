@@ -1,0 +1,156 @@
+﻿
+.blogdescription {
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 10px;
+    margin: 0;
+}
+
+
+.blogtitlle {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.75rem;
+    padding: 10px 10px;
+    font-size: 18px;
+    display: block;
+    background: #e36001;
+}
+
+
+    .blogtitlle:hover {
+        text-decoration: none;
+        color: #eaeaea;
+        transition: 0.3s;
+    }
+/*.blogtitlle:hover {
+    text-decoration: none;
+    color: #808080;
+    font-size: 1.75rem;
+    padding: 10px 10px;
+    font-size: 18px;
+    display: block;
+    background:#e36001;
+}*/
+
+
+.Footer {
+    margin: 0 auto 20px;
+    width: 100%;
+    background: #eaeaea;
+    padding: 10px;
+}
+
+.FooterList {
+    display: inline;
+    padding-left: 20px;
+}
+
+.s {
+    height: 32px !important;
+    margin: 0 0 10px 0;
+    padding: .7em;
+    border: 1px solid #ddd;
+    color: #666;
+    font-size: 14px;
+    line-height: normal !important;
+    outline: none;
+}
+
+input.search {
+    height: 32px !important;
+    padding: 0;
+    border: 1px solid #ddd;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    width: 30%;
+}
+
+.search {
+    background: #e36001;
+    position: relative;
+    width: 40px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.catheading {
+    background: #464a61;
+    color: #fff;
+    padding: 4px 10px;
+    text-align: center;
+    margin: 0;
+}
+
+.catanchar {
+    padding: 5px 10px;
+    font-size: 20px;
+    color: #464a61;
+}
+
+    .catanchar:hover {
+        text-decoration: none;
+    }
+
+.catlist {
+    list-style: none;
+}
+
+.catul {
+    margin: 0;
+    padding: 0;
+}
+
+.blogimg {
+    max-width: 100%;
+}
+
+.bloguploadimg img {
+    width: 450px; /* you can use % */
+    height: auto;
+}
+
+.bloguploadimg table {
+    width: 100%;
+    height: 100%;
+}
+
+    .bloguploadimg table td:nth-child(2) {
+        width: 0%;
+        overflow: hidden;
+    }
+
+.btn-theme-primary {
+    background-position: 0% 0%;
+    background-repeat: repeat-x;
+    border-color: #c74117;
+    color: #fff;
+    background-image: linear-gradient(to bottom, #ea704b 0%, #e6572b 100%);
+    background-color: #e6572b;
+    background-attachment: scroll;
+    margin-left: 27%;
+}
+
+.imgoppiopn {
+    height: 40px;
+}
+
+.inputstyleoppion {
+    margin-top: 20px;
+}
+
+input#txtName {
+    width: 120%;
+    margin-left: 6%;
+}
+
+input#txtEmailID {
+    width: 120%;
+    margin-left: 30%;
+}
+
+.responsewrapper {
+    width: 75% !important;
+}
