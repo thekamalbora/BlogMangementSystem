@@ -1,0 +1,139 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="~/Content/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-datepicker3.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/scripts/editor.css" rel="stylesheet" />
+    <link href="~/Content/Custom.css" rel="stylesheet" />
+    <title>Blog Project</title>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center text-uppercase pt-4">Blog Master Form</h2>
+        <br />
+        <input type="hidden" id="hfBlogID" value="0" />
+        <div class="row">
+            <div class="col-md-4 col-lg-4 col-sm-10">
+                <label class="col-sm-10 col-lg-4 col-md-4">Blog&nbsp;Title<span style="color: red; font-size: 20px;">*</span></label>
+                <textarea type="text" name="txtBlogTitle" class="form-control" id="txtBlogTitle" placeholder="Blog Title Upto 100 Words"></textarea>
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-10">
+                <label class="col-sm-10 col-lg-4 col-md-4">Blog&nbsp;Discription<span style="color: red; font-size: 20px;">*</span></label>
+                <textarea type="text" name="txtBlogDiscription" class="form-control" id="txtBlogDiscription" placeholder="Blog Discription Upto 200 Words"></textarea>
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-10">
+                <label class="col-sm-10 col-lg-4 col-md-4">Blog&nbsp;Sequence<span style="color: red; font-size: 20px;">*</span></label>
+                <textarea type="text" name="txtBlogSequence" class="form-control" id="txtBlogSequence" placeholder="Blog Sequence"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-lg-4 col-sm-10">
+                <label class="col-sm-10 col-lg-4 col-md-4">Submision&nbsp;Date<span style="color: red; font-size: 20px;">*</span></label>
+                <input placeholder="Selected date" type="text" id="txtSubmisionDate" class="form-control datepicker">
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-10">
+                <label class="col-sm-10 col-lg-4 col-md-4">Category&nbsp;Name<span style="color: red; font-size: 20px;">*</span></label>
+                <select id="ddlBlogCategory" class="form-control">
+                    <option value="0">Select</option>
+                </select>
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-10">
+                <label class="col-sm-10 col-lg-4 col-md-4">Is&nbsp;Show<span style="color: red; font-size: 20px;">*</span></label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="ChkIsShow">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-6 col-sm-10">
+                <label class="col-sm-10 col-lg-4 col-md-4">Blog&nbsp;Detail&nbsp;Title<span style="color: red; font-size: 20px;">*</span></label>
+                <textarea placeholder="Blog Detail Title Upto 100 Word" type="text" id="txtBlogDetailTitle" class="form-control"></textarea>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-10">
+                <label class="col-sm-10 col-lg-4 col-md-4">Blog&nbsp;Image<span style="color: red; font-size: 20px;">*</span></label>
+                <input type="file" class="form-control-file" id="fuBlogImage">
+            </div>
+        </div>
+        <div class="row">
+            <label class="col-sm-10 col-lg-4 col-md-4">Blog&nbsp;Detail<span style="color: red; font-size: 20px;">*</span></label>
+            <textarea id="txtBlogFullDetailed"></textarea>
+        </div>
+        <br />
+        <div class="text-center">
+            <button type="button" id="btnPacketSave" style="color:black;" class="btn btn-info">
+                <span class="glyphicon glyphicon-save"></span> Save
+            </button>
+            <button type="button" id="btnPacketRestAll" onclick="Clear()" style="color:black;" class="btn btn-warning">
+                <span class="glyphicon glyphicon-refresh"></span> Reset
+            </button>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <h3>
+                Total Number Of Record:-
+                <span id="totalrecord"></span>
+            </h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <span id="lbBlogDetails"></span>
+        </div>
+    </div>
+    @*<div>
+            <label id="lbPacketDetails">
+
+            </label>
+        </div>*@
+    @*<div class="container">
+        <div class="row">
+            <div class="col-md-9">
+       
+       </div>
+            <div class="col-md-3">               
+                <span id="ShowCategories">                   
+                </span>
+                <span id="ShowRecentBlog"><div class="recent-block"><h4><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Recent Blog</h4><div class="inner-blog"><h5><a href="BlogByCategories?CategoryName=Machine Learning"><i class="fa fa-file-text-o" aria-hidden="true"></i> The Hottest Machine Learning Jobs Will Need You to Know These Programming Languages and Tools</a></h5><p>In India less than 10% of data scientists are estimated to be available worldwide. In India, there are up to 97,000 job opportunities for Data Science, Analyst and Machine Learning professionals.</p><hr><h5><a href="BlogByCategories?CategoryName=Data Science"><i class="fa fa-file-text-o" aria-hidden="true"></i> Data Science vs. Machine Learning: Understanding the Difference and What it Means Today</a></h5><p>what are the consequences of this difference between machine learning and data science? What can we learn from the relationship between the two terms about developments in technology?</p></div></div></span>
+            </div>
+        </div>
+    </div>*@   
+    <div>
+@*@using (Html.BeginForm("DownloadFile", "Home", FormMethod.Post))*@
+        @*@using (@Html.BeginForm("DownloadFile", "BlogMaster", FormMethod.Post))
+        {
+      
+        }*@
+@using (Html.BeginForm("DownloadFile", "BlogMaster", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+        <span id="lblImage"></span>
+}
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="~/scripts/jquery-3.4.1.min.js"></script>
+    @*<script src="~/scripts/ckeditor/ckeditor.js"></script>*@
+    <script src="~/scripts/editor.js"></script>
+    @*<script src="~/scripts/ckeditor/samples/js/sample.js"></script>*@
+    <script src="~/scripts/bootstrap-datepicker.min.js"></script>
+    <script src="~/scripts/BlogMaster.js?v=1"></script>
+ 
+</body>
+</html>

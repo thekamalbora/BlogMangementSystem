@@ -1,0 +1,119 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BlogDetails</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="~/Content/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-datepicker3.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="~/Content/Custom.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h3>Blog Details</h3>
+        <input type="hidden" id="hfBlogID" value=@ViewBag.BlogID />
+        <div class="row">
+            <div class="col-md-9">
+                <span id="BlogDetail">
+                    @*@Html.Raw(ViewBag.Test as string);*@
+                    @*@Html.Raw(HttpUtility.HtmlDecode(ViewBag.YourHTML));*@
+                </span>
+                <div style="border-bottom: solid 1px #ccc; margin-top: 5px; margin-bottom: 20px;">
+                </div>
+                </div>
+            <div class="col-md-3">
+                <input type="text" class="s" placeholder="Search or Type Keyword" id="txtSearch">
+                <input type="submit" value="Search"  class="search" id="btnSearch">
+                <br /><br />
+                <span id="ShowCategories">
+
+                </span>
+                <br /><br />
+                <span id="ShowRecentBlog">
+                </span>
+            </div>
+            </div>
+        </div>
+    <div>
+        @if (ViewBag.Error != null)
+
+        {
+            <h2> @ViewBag.Error </h2>
+        }
+    </div>
+
+                    <div id="div1" style="overflow:auto">
+
+
+                        <div class="container">
+                            <div class="card card-comments mb-3 wow fadeIn responsewrapper">
+
+
+
+                                <span id="ShowBlogOpenion">
+
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="container ">
+                            <div class="card card-comments mb-3 wow fadeIn responsewrapper ">
+                                <div class="card-header font-weight-bold">Leave Your Response</div>
+                                <div class="card-body">
+
+                                    <div class="row ">
+
+
+                                        <div class="row">
+                                            <input type="hidden" id="hfOppinionID" value="0" />
+                                            <div class="col-md-12 col-sm-12">
+
+                                                <textarea name="txtOpinion" rows="5" cols="100" id="txtOpinion" title="Write a respose..." class="form-control" placeholder="Write a respose..."></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="row inputstyleoppion">
+
+                                            <div class="col-md-6 col-sm-6">
+                                                <input name="txtName" type="text" id="txtName" title="Your Name" class="form-control" placeholder="Your Name">
+                                            </div>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input name="txtEmailID" type="text" id="txtEmailID" title="Your EmailID" class="form-control" placeholder="Your Email-ID">
+                                            </div>
+                                            <div class="col-md-12 col-sm-12 text-center">
+                                                <button id="btnSubmitOpinion" type="button" class="btn btn-lg btn-theme-primary" onclick="SaveOpinion()" style="margin-top: 10px;"><i class="fa fa-pencil fa-1x"></i>&nbsp;Submit</button>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12">
+                                                <span id="lblMessage" style="color: Green;"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+          
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="~/scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/scripts/ckeditor/ckeditor.js"></script>
+    <script src="~/scripts/ckeditor/samples/js/sample.js"></script>
+    <script src="~/scripts/bootstrap-datepicker.min.js"></script>
+    <script src="~/scripts/BlogDetails.js?v=2.1"></script>
+    <script src="~/scripts/CategoryMaster.js?v=1"></script>
+    <script src="~/scripts/Oppinion.js"></script>
+</body>
+</html>
